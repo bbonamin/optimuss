@@ -1,0 +1,23 @@
+= Optimuss
+
+Generates prime numbers and a multiplication table with them.
+
+== Installation
+    $ gem install optimuss
+
+== Usage
+
+* To generate the 10 first prime numbers and print a multiplication table with all of them, run:
+    $ optimuss prime_table
+
+* To print the 65000th prime number, run:
+    $ optimuss prime_at --position 65000
+
+
+== Contributing
+
+1. Fork it ( https://github.com/bbonamin/optimuss/fork )
+2. Create your feature branch (+git checkout -b my-new-feature+)
+3. Commit your changes (+git commit -am 'Add some feature'+)
+4. Push to the branch (+git push origin my-new-feature+)
+5. Create a new Pull Request
