@@ -36,13 +36,8 @@ command :prime_table do |c|
   c.default_value 'default'
   c.flag :f
   c.action do |global_options,options,args|
-
-    # Your command logic here
-     
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
-
-    puts "prime_table command ran"
+    prime_generator = Optimuss::PrimeGenerator.new
+    prime_generator.render
   end
 end
 
