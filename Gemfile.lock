@@ -3,6 +3,7 @@ PATH
   specs:
     optimuss (0.0.1)
       gli (= 2.12.2)
+      terminal-table
 
 GEM
   remote: https://rubygems.org/
@@ -30,6 +31,7 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     slop (3.6.0)
+    terminal-table (1.4.5)
 
 PLATFORMS
   ruby
