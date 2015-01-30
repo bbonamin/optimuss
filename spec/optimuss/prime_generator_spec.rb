@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'prime'
 
 module Optimuss
   describe PrimeGenerator do
