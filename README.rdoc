@@ -12,8 +12,11 @@ The prime generator algorithm is an implementation of the method on ProgrammingP
 * To generate the 10 first prime numbers and print a multiplication table with all of them, run:
     $ optimuss prime_table
 
-* To print the 65000th prime number, run:
-    $ optimuss prime_at --position 65000
+* To generate the N first prime numbers and print a multiplication table with all of them, run:
+    $ optimuss prime_table --primes N
+
+* To print the Nth prime number, run:
+    $ optimuss prime_at --position N
 
 
 == Contributing

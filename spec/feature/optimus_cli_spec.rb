@@ -8,9 +8,19 @@ describe 'Optimus CLI' do
 
     it 'prints a multiplication table with the first 10 prime numbers' do
       output = `bundle exec bin/optimuss prime_table`
-      table = primes_from_stdlib_multiplication_table
-      unique_primes = numbers_from_stdout_table(output)
+      table = primes_from_stdlib_multiplication_table(count: 10)
       control_primes = table.flatten.uniq
+
+      unique_primes = numbers_from_stdout_table(output)
+      expect((control_primes - unique_primes).compact).to be_empty
+    end
+
+    it 'prints a custom multiplication table if given an argument' do
+      output = `bundle exec bin/optimuss prime_table --primes 20`
+      table = primes_from_stdlib_multiplication_table(count: 20)
+      control_primes = table.flatten.uniq
+
+      unique_primes = numbers_from_stdout_table(output)
       expect((control_primes - unique_primes).compact).to be_empty
     end
   end

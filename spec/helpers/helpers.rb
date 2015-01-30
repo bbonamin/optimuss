@@ -2,8 +2,8 @@ require 'prime'
 
 # RSpec related helpers
 module Helpers
-  def primes_from_stdlib_multiplication_table
-    primes = Prime.take(10)
+  def primes_from_stdlib_multiplication_table(count:)
+    primes = Prime.take(count)
     table = []
     table << [nil] + primes
     primes.each do |prime|

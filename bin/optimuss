@@ -10,12 +10,15 @@ version Optimuss::VERSION
 subcommand_option_handling :normal
 arguments :strict
 
-desc 'Prints a multiplication table with the first 10 primes'
+desc 'Prints a multiplication table with the first N primes'
 command :prime_table do |c|
-  c.action do
-    primes = Optimuss::PrimeGenerator.take(count: 10)
+  c.flag :primes, default_value: 10
+
+  c.action do |_, args|
+    primes = Optimuss::PrimeGenerator.take(count: args[:primes].to_i)
     table = Optimuss::MultiplicationTable.new(collection: primes)
     table.generate!
+    puts "Multiplication table for the first #{args[:primes]} primes:"
     puts Optimuss::Renderer.new.render(table: table.product)
   end
 end
