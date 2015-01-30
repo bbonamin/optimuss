@@ -19,5 +19,18 @@ module Optimuss
         expect(PrimeGenerator.take(count: 300)).to eq(Prime.take(300))
       end
     end
+
+    describe '.at' do
+      it 'raises an exception if position is not provided' do
+        expect { PrimeGenerator.at }.to raise_error(ArgumentError)
+      end
+      it 'returns 2 as the prime number in the first position' do
+        expect(PrimeGenerator.at position: 1).to eq(2)
+      end
+
+      it 'returns 29 as the prime number in the 10th position' do
+        expect(PrimeGenerator.at position: 10).to eq(29)
+      end
+    end
   end
 end

@@ -14,4 +14,19 @@ describe 'Optimus CLI' do
       expect((control_primes - unique_primes).compact).to be_empty
     end
   end
+
+  describe 'prime_at' do
+    it 'runs and exits with a status 0' do
+      expect(system 'bundle exec bin/optimuss prime_at --position=20').to eq(true)
+    end
+
+    it 'raises an exception if position is not provided' do
+      expect(system 'bundle exec bin/optimuss prime_at').to eq(false)
+    end
+
+    it 'prints the prime at the given position if provided' do
+      output = `bundle exec bin/optimuss prime_at --position 20`
+      expect(output.split(' ').map(&:to_i).flatten.uniq).to include(71)
+    end
+  end
 end

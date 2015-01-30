@@ -10,7 +10,7 @@ version Optimuss::VERSION
 subcommand_option_handling :normal
 arguments :strict
 
-desc 'Print a multiplication table with the first 10 primes'
+desc 'Prints a multiplication table with the first 10 primes'
 command :prime_table do |c|
   c.action do
     primes = Optimuss::PrimeGenerator.take(count: 10)
@@ -20,10 +20,16 @@ command :prime_table do |c|
   end
 end
 
-desc 'Print the prime number at the given location'
+desc 'Prints the prime number at the given location'
+
 command :prime_at do |c|
-  c.action do
-    puts 'prime_at command ran'
+  c.flag [:p, :position, 'position']
+
+  c.action do |_, args|
+    raise '--position is required' if args[:position].nil?
+    prime = Optimuss::PrimeGenerator.at(position: args[:position].to_i)
+
+    puts "The prime in the position ##{args[:position]} is #{prime}"
   end
 end
 
