@@ -6,7 +6,10 @@ Gem::Specification.new do |s|
   s.email = 'bruno@bonamin.org'
   s.homepage = 'http://bonamin.org'
   s.platform = Gem::Platform::RUBY
-  s.summary = 'A prime number and multiplication table generator'
+  s.summary = 'A prime number and multiplication table generator.'
+  s.description = 'Optimuss will allow you to generate a multiplication table \
+    with prime numbers and get a prime number at a certain position.'
+  s.licenses = ['MIT']
   s.files = `git ls-files`.split("\n")
   s.require_paths << 'lib'
   s.has_rdoc = true
