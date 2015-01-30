@@ -1,6 +1,8 @@
 = Optimuss
 
-Generates prime numbers and a multiplication table with them.
+A prime number and multiplication table generator.
+
+The prime generator algorithm is an implementation of the method on ProgrammingPraxis http://programmingpraxis.com/2011/10/14/the-first-n-primes/ which was first described by Melissa O'Neill on The Genuine Sieve of Eratosthenes http://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf.
 
 == Installation
     $ gem install optimuss
