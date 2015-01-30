@@ -9,15 +9,6 @@
 Lint/Eval:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Lint/UnusedBlockArgument:
-  Enabled: false
-
-# Offense count: 1
-Metrics/AbcSize:
-  Max: 17
-
 # Offense count: 3
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
@@ -30,10 +21,4 @@ Metrics/MethodLength:
 
 # Offense count: 4
 Style/Documentation:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundModuleBody:
   Enabled: false

@@ -26,7 +26,7 @@ command :prime_at do |c|
   c.flag [:p, :position, 'position']
 
   c.action do |_, args|
-    raise '--position is required' if args[:position].nil?
+    fail '--position is required' if args[:position].nil?
     prime = Optimuss::PrimeGenerator.at(position: args[:position].to_i)
 
     puts "The prime in the position ##{args[:position]} is #{prime}"

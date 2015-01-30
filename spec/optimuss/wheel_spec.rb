@@ -18,7 +18,6 @@ module Optimuss
 
     describe '.from' do
       it 'sets up a proper wheel given just a number' do
-        number = 3
         wheel = Wheel.from(number: 3)
         expect(wheel.base_value).to eq(9)
         expect(wheel.skip_value).to eq(6)

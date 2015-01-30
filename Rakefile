@@ -10,5 +10,4 @@ end
 
 spec = eval(File.read('optimuss.gemspec'))
 
-Gem::PackageTask.new(spec) do |pkg|
-end
+Gem::PackageTask.new(spec) {}
