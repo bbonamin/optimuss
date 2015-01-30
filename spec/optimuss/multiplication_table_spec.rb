@@ -18,7 +18,7 @@ module Optimuss
         expect(first_column).to eq([nil] + collection)
       end
 
-      it 'returns the multiplication of the row and column at the intersection' do
+      it 'returns the multiplication of rows and columns at the intersection' do
         collection = [1, 2, 3]
         table = MultiplicationTable.new(collection: collection)
         table.generate!

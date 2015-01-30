@@ -9,11 +9,6 @@
 Lint/Eval:
   Enabled: false
 
-# Offense count: 3
-# Configuration parameters: AllowURI, URISchemes.
-Metrics/LineLength:
-  Max: 94
-
 # Offense count: 1
 # Configuration parameters: CountComments.
 Metrics/MethodLength:

@@ -12,4 +12,8 @@ module Helpers
     end
     table
   end
+
+  def numbers_from_stdout_table(output)
+    output.to_s.gsub("\n", ' ').gsub(/[^\d]/, ' ').split(' ').map(&:to_i).uniq
+  end
 end
