@@ -15,4 +15,3 @@ describe 'Optimus CLI' do
     end
   end
 end
-

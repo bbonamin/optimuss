@@ -1,73 +1,28 @@
 #!/usr/bin/env ruby
 require 'gli'
-begin # XXX: Remove this begin/rescue before distributing your app
 require 'optimuss'
-rescue LoadError
-  STDERR.puts "In development, you need to use `bundle exec bin/optimuss` to run your app"
-  STDERR.puts "At install-time, RubyGems will make sure lib, etc. are in the load path"
-  STDERR.puts "Feel free to remove this message from bin/optimuss now"
-  exit 64
-end
-
 include GLI::App
 
-program_desc 'Describe your application here'
+program_desc 'A prime number and multiplication table generator'
 
 version Optimuss::VERSION
 
 subcommand_option_handling :normal
 arguments :strict
 
-desc 'Describe some switch here'
-switch [:s,:switch]
-
-desc 'Describe some flag here'
-default_value 'the default'
-arg_name 'The name of the argument'
-flag [:f,:flagname]
-
-desc 'Describe prime_table here'
-arg_name 'Describe arguments to prime_table here'
+desc 'Print a multiplication table with the first 10 primes'
 command :prime_table do |c|
-  c.desc 'Describe a switch to prime_table'
-  c.switch :s
-
-  c.desc 'Describe a flag to prime_table'
-  c.default_value 'default'
-  c.flag :f
-  c.action do |global_options,options,args|
+  c.action do
     prime_generator = Optimuss::PrimeGenerator.new
     prime_generator.render
   end
 end
 
-desc 'Describe prime_at here'
-arg_name 'Describe arguments to prime_at here'
+desc 'Print the prime number at the given location'
 command :prime_at do |c|
-  c.action do |global_options,options,args|
-    puts "prime_at command ran"
+  c.action do
+    puts 'prime_at command ran'
   end
-end
-
-pre do |global,command,options,args|
-  # Pre logic here
-  # Return true to proceed; false to abort and not call the
-  # chosen command
-  # Use skips_pre before a command to skip this block
-  # on that command only
-  true
-end
-
-post do |global,command,options,args|
-  # Post logic here
-  # Use skips_post before a command to skip this
-  # block on that command only
-end
-
-on_error do |exception|
-  # Error logic here
-  # return false to skip default error handling
-  true
 end
 
 exit run(ARGV)

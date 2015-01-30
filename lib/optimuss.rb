@@ -2,7 +2,11 @@ require 'optimuss/version.rb'
 require 'optimuss/prime_generator.rb'
 require 'optimuss/multiplication_table.rb'
 require 'optimuss/renderer'
+require 'optimuss/wheel'
 require 'terminal-table'
 
-# Add requires for other files you add to your project here, so
-# you just need to require this one file in your bin file
+# Optimuss is a gem that generates primes and prints
+# pretty multiplication tables.
+module Optimuss
+
+end

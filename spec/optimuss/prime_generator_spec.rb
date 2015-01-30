@@ -8,7 +8,7 @@ module Optimuss
       end
 
       it 'returns the take 2 primes when passed 2 as argument' do
-        expect(PrimeGenerator.take(count: 2)).to eq([2,3])
+        expect(PrimeGenerator.take(count: 2)).to eq([2, 3])
       end
 
       it 'returns the take 25 primes when passed 25 as argument' do

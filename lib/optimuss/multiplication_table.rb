@@ -1,4 +1,7 @@
 module Optimuss
+  # Calculates the product of all the possible
+  # combinations between the collection
+  # argument
   class MultiplicationTable
     attr_reader :product
 
@@ -9,13 +12,13 @@ module Optimuss
     def generate!
       header = [nil].concat(@collection)
       @product = [header].concat(
-        @collection.map { |item|
+        @collection.map do |item|
           [item].concat(
-            @collection.map { |inner_item| 
+            @collection.map do |inner_item|
               inner_item * item
-            }
+            end
           )
-        }
+        end
       )
     end
   end

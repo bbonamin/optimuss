@@ -7,9 +7,9 @@ module Optimuss
     end
 
     it 'prints the table passed as argument' do
-      output = subject.render(table: [[1,2],[3,4]])
+      output = subject.render(table: [[1, 2], [3, 4]])
       table_items = output.to_s.gsub("\n", ' ').gsub(/[^\d]/, ' ').split(' ').map(&:to_i).uniq
-      control_items = [1,2,3,4]
+      control_items = [1, 2, 3, 4]
       expect(control_items - table_items).to be_empty
     end
   end
