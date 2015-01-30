@@ -17,12 +17,8 @@ describe 'Optimus CLI' do
 
   describe 'prime_at' do
     it 'runs and exits with a status 0' do
-      command = 'bundle exec bin/optimuss prime_at --position=20'
+      command = 'bundle exec bin/optimuss prime_at --position 20'
       expect(system(command)).to eq(true)
-    end
-
-    it 'raises an exception if position is not provided' do
-      expect(system 'bundle exec bin/optimuss prime_at').to eq(false)
     end
 
     it 'prints the prime at the given position if provided' do

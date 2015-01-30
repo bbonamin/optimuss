@@ -20,15 +20,13 @@ command :prime_table do |c|
   end
 end
 
-desc 'Prints the prime number at the given location'
+desc 'Prints the prime number at a position'
 
 command :prime_at do |c|
-  c.flag [:p, :position, 'position']
+  c.flag :position, required: true
 
   c.action do |_, args|
-    fail '--position is required' if args[:position].nil?
     prime = Optimuss::PrimeGenerator.at(position: args[:position].to_i)
-
     puts "The prime at the position ##{args[:position]} is #{prime}"
   end
 end
