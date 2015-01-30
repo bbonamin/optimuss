@@ -3,7 +3,7 @@ PATH
   specs:
     optimuss (0.0.1)
       gli (= 2.12.2)
-      terminal-table
+      terminal-table (~> 1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -52,8 +52,8 @@ PLATFORMS
 
 DEPENDENCIES
   optimuss!
-  pry
-  rake
-  rdoc
-  rspec
-  rubocop
+  pry (~> 0.10)
+  rake (~> 10.4)
+  rdoc (~> 4.2)
+  rspec (~> 3.1)
+  rubocop (~> 0.28)
