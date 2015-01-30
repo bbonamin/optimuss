@@ -1,7 +1,7 @@
 module Optimuss
   # Stores the base and skip values needed
   # to calculate prime numbers
-  class Wheel
+  class Iterator
     attr_accessor :base_value, :skip_value
 
     def self.from(number:)

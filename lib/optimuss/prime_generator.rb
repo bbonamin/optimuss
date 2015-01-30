@@ -12,17 +12,17 @@ module Optimuss
     end
 
     def self.primes(start_from:, max_count:)
-      wheels = []
+      list = IteratorList.new
       primes = [2]
-      iterator = start_from
+      pointer = start_from
       loop do
-        if wheels.map(&:base_value).include?(iterator)
-          wheels.select { |w| w.base_value == iterator }.each(&:increment!)
+        if list.iterator?(pointer)
+          list.increment_members_with_base_value!(pointer)
         else
-          primes << iterator
-          wheels << Wheel.from(number: iterator)
+          primes << pointer
+          list << Iterator.from(number: pointer)
         end
-        iterator += 2
+        pointer += 2
         break unless primes.size < max_count
       end
       primes
