@@ -11,14 +11,14 @@ module Optimuss
       end
     end
 
-    describe '#iterator?' do
+    describe '#contains?' do
       it 'returns true if contains an iterator' do
         subject << Iterator.new(base_value: 2, skip_value: 1)
-        expect(subject.iterator? 2).to eq(true)
+        expect(subject.contains? 2).to eq(true)
       end
 
       it 'returns false if it does not contain an iterator' do
-        expect(subject.iterator? 99).to eq(false)
+        expect(subject.contains? 99).to eq(false)
       end
     end
 

@@ -1,7 +1,4 @@
 module Optimuss
-  # Calculates the product of all the possible
-  # combinations between the collection
-  # argument
   class MultiplicationTable
     attr_reader :product
 
@@ -9,6 +6,8 @@ module Optimuss
       @collection = collection
     end
 
+    # Calculates the product of all the possible combinations
+    # between the collection
     def generate!
       header = [nil].concat(@collection)
       @product = [header].concat(

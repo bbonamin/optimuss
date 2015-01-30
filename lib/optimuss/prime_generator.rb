@@ -1,22 +1,20 @@
 module Optimuss
-  # Generates primes up to the given count
   module PrimeGenerator
     def self.take(count: 1)
       return [2] if count == 1
-      primes(start_from: 3, max_count: count)
+      primes(pointer: 3, max_count: count)
     end
 
     def self.at(position: fail(ArgumentError, 'position is required'))
       return 2 if position == 1
-      primes(start_from: 3, max_count: position)[position - 1]
+      primes(pointer: 3, max_count: position).fetch(position - 1)
     end
 
-    def self.primes(start_from:, max_count:)
+    def self.primes(pointer:, max_count:)
       list = IteratorList.new
       primes = [2]
-      pointer = start_from
       loop do
-        if list.iterator?(pointer)
+        if list.contains?(pointer)
           list.increment_members_with_base_value!(pointer)
         else
           primes << pointer

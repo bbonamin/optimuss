@@ -10,7 +10,7 @@ module Optimuss
       @members << iterator
     end
 
-    def iterator?(base_value)
+    def contains?(base_value)
       @members.map(&:base_value).include?(base_value)
     end
 
