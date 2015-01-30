@@ -11,7 +11,7 @@ describe 'Optimus CLI' do
       table = primes_from_stdlib_multiplication_table
       unique_primes = output.gsub("\n", ' ').gsub(/[^\d|\s]/, '').split(' ').map(&:to_i).uniq
       control_primes = table.flatten.uniq
-      expect(control_primes - unique_primes).to be_empty
+      expect((control_primes - unique_primes).compact).to be_empty
     end
   end
 end

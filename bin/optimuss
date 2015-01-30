@@ -13,8 +13,10 @@ arguments :strict
 desc 'Print a multiplication table with the first 10 primes'
 command :prime_table do |c|
   c.action do
-    prime_generator = Optimuss::PrimeGenerator.new
-    prime_generator.render
+    primes = Optimuss::PrimeGenerator.take(count: 10)
+    table = Optimuss::MultiplicationTable.new(collection: primes)
+    table.generate!
+    puts Optimuss::Renderer.new.render(table: table.product)
   end
 end
 
