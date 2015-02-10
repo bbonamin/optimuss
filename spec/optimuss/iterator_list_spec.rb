@@ -42,8 +42,8 @@ module Optimuss
         other_skip_value = 7
         subject << iterator
         subject << Iterator.new(
-                    base_value: base_value, \
-                    skip_value: other_skip_value
+          base_value: base_value, \
+          skip_value: other_skip_value
                   )
         subject.increment_members_with_base_value!(base_value)
         expect(subject.members.first.base_value).to eq(base_value + skip_value)

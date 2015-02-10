@@ -31,4 +31,17 @@ command :prime_at do |c|
   end
 end
 
+desc 'Prints a fibonacci multiplication table with the first N numbers'
+command :fib_table do |c|
+  c.flag :numbers, default_value: 10
+
+  c.action do |_, args|
+    fib_numbers = Optimuss::FibGenerator.take(count: args[:numbers].to_i)
+    table = Optimuss::MultiplicationTable.new(collection: fib_numbers)
+    table.generate!
+    puts "Multiplication table for the first #{args[:numbers]} fib numbers:"
+    puts Optimuss::Renderer.new.render(table: table.product)
+  end
+end
+
 exit run(ARGV)

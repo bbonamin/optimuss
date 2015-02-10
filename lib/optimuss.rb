@@ -1,5 +1,6 @@
 require 'optimuss/version.rb'
 require 'optimuss/prime_generator.rb'
+require 'optimuss/fib_generator.rb'
 require 'optimuss/multiplication_table.rb'
 require 'optimuss/renderer'
 require 'optimuss/iterator'
